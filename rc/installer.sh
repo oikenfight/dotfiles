@@ -1,6 +1,5 @@
 #!/bin/sh
-
-REPO_URL="https://github.com/dais0n/dotfiles.git"
+REPO_URL="https://github.com/oikenfight/dotfiles.git"
 DOTFILES_LOGO='
  ________  ________  _________  ________ ___  ___       _______   ________
 |\   ___ \|\   __  \|\___   ___\\  _____\\  \|\  \     |\  ___ \ |\   ____\
@@ -11,7 +10,7 @@ DOTFILES_LOGO='
     \|_______|\|_______|    \|__|  \|__|    \|__|\|_______|\|_______|\_________\
                                                                     \|_________|
 
-     this dotfiles made by dais0n (https://github.com/dais0n). Thank you!
+     this dotfiles made by oikenfight (https://github.com/oikenfight/dotfiles). Thank you!
  '
 
 
