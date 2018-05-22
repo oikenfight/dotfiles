@@ -17,7 +17,7 @@ zsh-init: peco-init pure-init
 	ln -snfv $(CURRENTDIR)/.zsh/snippets $(HOME)/.zsh/snippets
 peco-init:
 ifeq ($(UNAME),Darwin)
-	curl -L -O https://github.com/peco/peco/releases/download/v0.5.1/peco_darwin_amd64.zip
+	curl -L -O https://github.com/peco/peco/releases/download/v0.5.3/peco_darwin_amd64.zip
 	unzip peco_darwin_amd64.zip && mv peco_darwin_amd64/peco /usr/local/bin && rm -rf peco_darwin_amd64 peco_darwin_amd64.zip
 endif
 ifeq ($(UNAME),Linux)
