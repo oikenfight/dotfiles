@@ -21,7 +21,7 @@ ifeq ($(UNAME),Darwin)
 	unzip peco_darwin_amd64.zip && mv peco_darwin_amd64/peco /usr/local/bin && rm -rf peco_darwin_amd64 peco_darwin_amd64.zip
 endif
 ifeq ($(UNAME),Linux)
-	curl -L -O https://github.com/peco/peco/releases/download/v0.5.1/peco_linux_amd64.tar.gz
+	curl -L -O https://github.com/peco/peco/releases/download/v0.5.3/peco_linux_amd64.tar.gz
 	tar -zxvf peco_linux_amd64.tar.gz && mv peco_linux_amd64/peco /usr/local/bin && rm -rf peco_linux_amd64 peco_linux_amd64.tar.gz
 endif
 pure-init:

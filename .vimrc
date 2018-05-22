@@ -7,23 +7,17 @@ filetype off                  " required
 "
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
 
 " ----------------
 " plugin
 " ----------------
 "
-"call vundle#begin()
+call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'git://git.wincent.com/command-t.git'
 Plugin 'file:///home/gmarik/path/to/plugin'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-
-" ----------------
-" vundle end
-" ----------------
-"
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -74,6 +68,7 @@ augroup fileTypeIndent
   autocmd BufNewFile,BufRead .html setlocal tabstop=2 softtabstop=2 shiftwidth=2
   autocmd BufNewFile,BufRead .vue setf js setlocal tabstop=2 softtabstop=2 shiftwidth=2
 augroup END
+
 
 " -----------------
 " search
@@ -135,11 +130,17 @@ set t_Co=256
 highlight Normal ctermbg=none
 
 " 全角スペースをハイライト
-augroup highlightIdegraphicSpace
-  autocmd!
-  autocmd Colorscheme * highlight IdeographicSpace term=underline ctermbg=DarkGreen guibg=DarkGreen
-  autocmd VimEnter,WinEnter * match IdeographicSpace /　/
-augroup END
+function! ZenkakuSpace()
+    highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=darkgray
+endfunction
+if has('syntax')
+    augroup ZenkakuSpace
+        autocmd!
+        autocmd ColorScheme * call ZenkakuSpace()
+        autocmd VimEnter,WinEnter,BufRead * let w:m1=matchadd('ZenkakuSpace', '　')
+    augroup END
+    call ZenkakuSpace()
+endif
 
 " binary settings
 augroup BinaryXXD
@@ -164,9 +165,9 @@ nnoremap <ESC><ESC> :nohlsearch<CR>    " 検索ハイライト取り消し
 autocmd InsertLeave set nopaste
 
 " auto parentheses
-"inoremap {<Enter> {}<Left><CR><ESC><S-o>
-"inoremap [<Enter> []<Left><CR><ESC><S-o>
-"inoremap (<Enter> ()<Left><CR><ESC><S-o>
+inoremap {<Enter> {}<Left><CR><ESC><S-o>
+inoremap [<Enter> []<Left><CR><ESC><S-o>
+inoremap (<Enter> ()<Left><CR><ESC><S-o>
 
 
 " ----------------
