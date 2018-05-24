@@ -142,6 +142,14 @@ if has('syntax')
     call ZenkakuSpace()
 endif
 
+" 最後のカーソル位置を復元する
+if has("autocmd")
+    autocmd BufReadPost *
+    \ if line("'\"") > 0 && line ("'\"") <= line("$") |
+    \   exe "normal! g'\"" |
+    \ endif
+endif
+
 " binary settings
 augroup BinaryXXD
   autocmd!
@@ -163,6 +171,11 @@ nnoremap N Nzz                         " 検索対象が真ん中に来る
 nnoremap <C-c> :set paste<CR>          " ペーストモード
 nnoremap <ESC><ESC> :nohlsearch<CR>    " 検索ハイライト取り消し
 autocmd InsertLeave set nopaste
+imap { {}
+imap [ []
+imap ( ()
+imap ' ''
+imap " ""
 
 " auto parentheses
 inoremap {<Enter> {}<Left><CR><ESC><S-o>
