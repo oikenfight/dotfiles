@@ -170,18 +170,6 @@ nnoremap n nzz                         " 検索対象が真ん中に来る
 nnoremap N Nzz                         " 検索対象が真ん中に来る
 nnoremap <C-c> :set paste<CR>          " ペーストモード
 nnoremap <ESC><ESC> :nohlsearch<CR>    " 検索ハイライト取り消し
-autocmd InsertLeave set nopaste
-imap { {}
-imap [ []
-imap ( ()
-imap ' ''
-imap " ""
-
-" auto parentheses
-inoremap {<Enter> {}<Left><CR><ESC><S-o>
-inoremap [<Enter> []<Left><CR><ESC><S-o>
-inoremap (<Enter> ()<Left><CR><ESC><S-o>
-
 
 " ----------------
 " Basic Usage
